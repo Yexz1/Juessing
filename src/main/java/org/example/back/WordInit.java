@@ -11,7 +11,9 @@ public class WordInit {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             int i = 0;
+            // Boucle pour lire chaque ligne du fichier
             while ((line = br.readLine()) != null) {
+                // Ajout du mot à la base de données
                 DB.addWord(replaceAccents(line));
                 System.out.println(((double)100/336527)*i++ + "%");
             }

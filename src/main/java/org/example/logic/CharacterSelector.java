@@ -51,6 +51,8 @@ public class CharacterSelector {
     }
 
 
+    // Méthode pour générer un ensemble de caractères aléatoires
+    // caracters -> nombre d'apparence
     public static Hashtable<Character, Integer> gen() {
         char chararacter;
         Hashtable<Character,Integer> characters=new Hashtable<>();

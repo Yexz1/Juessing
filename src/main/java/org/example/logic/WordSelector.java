@@ -7,10 +7,10 @@ import java.util.Random;
 
 public class WordSelector {
     public static String select(){
-        //WordInit.init(); // uncomment when running first time
+        //WordInit.init(); // Décommenter cette ligne lors de la première exécution pour initialiser la base de données
         Random random = new Random();
         int min = 1;
-        int max = 336528;
+        int max = 336528; // Valeur maximale pour le `id`  du mot
 
         int randomNumber = random.nextInt(max - min + 1) + min;
         //System.out.println(randomNumber);
