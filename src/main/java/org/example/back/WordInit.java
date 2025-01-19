@@ -12,7 +12,7 @@ public class WordInit {
             String line;
             int i = 0;
             while ((line = br.readLine()) != null) {
-                DB.addWord(replaceAccents(line)); //must be multithread
+                DB.addWord(replaceAccents(line));
                 System.out.println(((double)100/336527)*i++ + "%");
             }
         } catch (IOException | SQLException _) {}

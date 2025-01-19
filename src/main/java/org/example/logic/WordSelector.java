@@ -7,12 +7,11 @@ import java.util.Random;
 
 public class WordSelector {
     public static String select(){
-        //WordInit.init();
+        //WordInit.init(); // uncomment when running first time
         Random random = new Random();
         int min = 1;
         int max = 336528;
 
-        // Generate random number between min (inclusive) and max (inclusive)
         int randomNumber = random.nextInt(max - min + 1) + min;
         //System.out.println(randomNumber);
         try {

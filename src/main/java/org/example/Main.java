@@ -1,7 +1,6 @@
 package org.example;
 
 import org.example.draw.Frame;
-import org.example.logic.CharacterSelector;
 
 public class Main {
 

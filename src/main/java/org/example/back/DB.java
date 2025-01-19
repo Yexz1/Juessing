@@ -10,10 +10,10 @@ package org.example.back;
  import java.sql.*;
 
 public class DB {
-    private static String driverClassName = "org.mariadb.jdbc.Driver";
-    private static String url = "jdbc:mariadb://localhost/test";
-    private static String username = "foo";
-    private static String password = "bar";
+    private static final String driverClassName = "org.mariadb.jdbc.Driver";
+    private static final String url = "jdbc:mariadb://localhost/test";
+    private static final String username = "foo";
+    private static final String password = "bar";
     private static Connection connection;
 
 

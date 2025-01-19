@@ -87,7 +87,7 @@ public class Frame extends JFrame {
 
 
         Font f = new Font("serif", Font.PLAIN, fontSize);
-        scoreLabel = new JLabel("score = " + String.valueOf(score));
+        scoreLabel = new JLabel("score = " + score);
         scoreLabel.setFont(f);
 
         panel = new JPanel(new BorderLayout());
@@ -208,7 +208,7 @@ public class Frame extends JFrame {
             if (characters.get(charactersString.charAt(i)) == null) {
                 characters.put(charactersString.charAt(i), 1);
             } else {
-                characters.put(charactersString.charAt(i), (Integer) characters.get(charactersString.charAt(i)) + 1);
+                characters.put(charactersString.charAt(i), characters.get(charactersString.charAt(i)) + 1);
             }
 
         }
@@ -279,7 +279,7 @@ public class Frame extends JFrame {
 
                     float oldscore = score;
                     score = CharacterSelector.getScore(wordString.toString());
-                    scoreLabel.setText("score = " + String.valueOf(oldscore) + " + " + String.valueOf(score));
+                    scoreLabel.setText("score = " + oldscore + " + " + score);
                     score += oldscore;
                     context.get(current_context).set(context.get(current_context).size() - 1, String.valueOf(score));
                 } else {
@@ -307,7 +307,7 @@ public class Frame extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            if ( (JButton) e.getSource() == next ) current_context++;
+            if ( e.getSource() == next ) current_context++;
             else if (current_context==0) return;
             else current_context--;
 
@@ -353,95 +353,3 @@ public class Frame extends JFrame {
         }
     }
 }
-
-
-
-    /*
-
-    ArrayList<String> wordsArray = new ArrayList<>(1);
-    JPanel keys;
-    JPanel words;
-    JTextField jTextField;
-    JPanel word1 = new JPanel();
-    JPanel word2 = new JPanel();
-    JPanel word3 = new JPanel();
-
-    Frame() throws InterruptedException, IOException {
-        super();
-
-        setLayout(new GridLayout(3, 1));
-        keys = new JPanel();
-        words = new JPanel();
-        configKeys();
-        configWords();
-        add(keys);
-        add(words);
-
-
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        pack();
-        show();
-    }
-
-    private void configWords() throws InterruptedException {
-        words.setLayout(new GridLayout(3, 1));
-        createWord(word1);
-        words.add(word1);
-        createWord(word2);
-        words.add(word2);
-        createWord(word3);
-        words.add(word3);
-
-    }
-
-    private void createWord(JPanel worde) throws InterruptedException {
-        String word = "";
-        String chars = "";
-        Character c;
-        Enumeration<Character> enumeration = CharacterSelector.get().keys();
-        while (enumeration.hasMoreElements()) {
-            c = enumeration.nextElement();
-            for (int i = 0; i < CharacterSelector.get().get(c); i++) {
-                chars += Character.toLowerCase(c);
-            }
-        }
-
-        do {
-            word = validWord.get(chars);
-        }while ( wordsS.contains(word)); //word.length()<2 ||
-
-        wordsS.add(word);
-
-        System.out.println(word);
-
-        worde.setLayout(new GridLayout(1, word.length()));
-
-        for (int i = 0; i < word.length(); i++) {
-            jTextField = new JTextField("*");
-            jTextField.setEditable(false);
-            jTextField.setFocusable(false);
-            worde.add(jTextField);
-        }
-    }
-
-
-    private void configKeys() {
-        keys.setLayout(new FlowLayout());
-        Character c;
-        Enumeration<Character> enumeration = CharacterSelector.gen().keys();
-
-        while (enumeration.hasMoreElements()) {
-            c = enumeration.nextElement();
-            for (int i = 0; i < CharacterSelector.get().get(c); i++) {
-                keys.add(new JButton(String.valueOf(c)));
-            }
-
-        }
-    }
-
-
-    public static void main(String[] args) throws InterruptedException, IOException {
-        Frame frame = new Frame();
-    }
-*/
